@@ -26,9 +26,7 @@ exports.create = function (req, res) {
     // Create a new article object
     const article = new Article(req.body);
 
-    // Set the article's 'creator' property
-    article.creator = req.user;
-    article.user = req.user;
+     article.user = req.user;
 
     // Try saving the article
     article.save((err) => {
@@ -38,8 +36,6 @@ exports.create = function (req, res) {
                 message: getErrorMessage(err)
             });
         } else {
-
-            sendEmail(article.creator._id,article._id,'new asset','new asset' ),
             // Send a JSON representation of the article 
             res.json(article);
         }

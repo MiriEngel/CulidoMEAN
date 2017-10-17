@@ -19,24 +19,11 @@ const ArticleSchema = new Schema({
         default: '',
         trim: true
     },
-    location: {						//GPS
-        type: [Number],
-        index: '2dsphere',
-        default: []
-    },
-    address: {				//location as address
-        type: String,
-        default: ''
-    },
+
 
     user: {
         type: Schema.ObjectId,
         ref: 'User'
-    },
-    imgUrl: {
-        type: [String],
-        default: '',
-        trim: true
     },
     tags: {
         type: [String],
@@ -47,7 +34,7 @@ const ArticleSchema = new Schema({
 
 });
 
-ArticleSchema.index({ location: 1 });
+// ArticleSchema.index({ location: 1 });
 
 // Create the 'Article' model out of the 'ArticleSchema'
 mongoose.model('Article', ArticleSchema);

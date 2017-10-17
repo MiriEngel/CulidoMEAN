@@ -11,7 +11,8 @@ import { HomeModule } from './home/home.module';
 import { AuthenticationService } from './authentication/authentication.service';
 import { AuthenticationModule } from './authentication/authentication.module';
 import { ArticlesModule } from './articles/articles.module';
-import {HeaderComponent } from './header/header.component'
+import {ChatModule} from './chat/chat.module'
+import {HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
@@ -19,11 +20,13 @@ import {HeaderComponent } from './header/header.component'
     HeaderComponent
   ],
   imports: [
+    
     BrowserModule,
      HttpModule,
     AuthenticationModule,
     HomeModule,
     ArticlesModule,
+    ChatModule,
     RouterModule.forRoot(AppRoutes),
   ],
  

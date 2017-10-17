@@ -1,10 +1,10 @@
 // Set the 'development' environment configuration object
 module.exports = {
-	db: 'mongodb://localhost/mean-development',
+	db: 'mongodb://localhost/culido-development',
 	sessionSecret: 'developmentSessionSecret',
 	facebook: {
-		clientID: '1837465166490712',
-		clientSecret: 'e33369ff5238a1102d179f41a071acbd',
+		clientID: '353013851827622',
+		clientSecret: '96474830f9e0beddb5d27fd3a4690519',
 		callbackURL: 'http://localhost:3000/oauth/facebook/callback'
 	},
 	twitter: {

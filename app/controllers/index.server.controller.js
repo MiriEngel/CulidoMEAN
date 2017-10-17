@@ -11,8 +11,8 @@ exports.render = function(req, res) {
 	};
 
 	// Use the 'response' object to render the 'index' view with a 'title' and 'user' properties
-	res.render('index', {
-		title: 'PopApp',
+	res.render('index.ejs', {
+		title: 'Culido',
 		user: JSON.stringify(user),
 		userFirstName : user?user.firstName:null
 	});

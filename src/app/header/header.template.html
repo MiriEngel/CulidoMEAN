@@ -11,5 +11,8 @@
                         <a [routerLink]="['/articles']">ALL ASSETS</a>
                   
                     <li *ngIf="user"><a [routerLink]="['/articles/create']">Upload reciept</a> </li>
-                    <!--<li *ngIf="!user"><a [routerLink]="['/authentication/signup']">Signup</a></li>-->
+                   <li *ngIf="!user"><a [routerLink]="['/authentication/signup']">Signup</a></li>
                     <li *ngIf="!user"><a [routerLink]="['/authentication/signin']">Signin</a></li>
+                    <div *ngIf="user">
+hello: {{user.firstName}}
+                      </div>
