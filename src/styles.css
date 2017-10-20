@@ -1,1 +1,114 @@
 /* You can add global styles to this file, and also import other style files */
+/* app css stylesheet */                 
+
+* {
+    box-sizing: border-box;
+  }
+  
+  img {
+    width: 100%;
+    height: auto;
+  }
+  
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .transDarkBg {
+    background-color: rgba(40, 40, 40, 0.7);
+  }
+  
+  .linkBar {
+    margin-left: 6%;
+  }
+  
+  .linkBar a {
+    color: inherit;
+  }
+  
+  .headerStyle {
+    height: 100px;
+  }
+  
+  .myContainer {
+    padding: 0 15px;
+  }
+  
+  .searchInputContainer {
+    padding-left: 40px;
+  }
+  
+  .searchInput {
+    width: 75%;
+    border: none;
+    margin-left: 10px;
+    background-color: #000 !important;
+  }
+  
+  .searchInput::-webkit-input-placeholder {
+    color: #bebebe;
+  }
+  
+  .footer-nav ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  li {
+    list-style: none;
+  }
+  
+  .footer-nav dt {
+    color: #fefefe;
+    font-weight: 500;
+  }
+  
+  .footer-nav dl li {
+    padding: 10px 0;
+  }
+  
+  .footer-nav dl li:first-child {
+    padding-top: 20px;
+  }
+  
+  .footer-nav dl a {
+    text-decoration: none;
+    color: #787774;
+  }
+  
+  .footer-nav dl i {
+    color: #787774;
+    padding: 0 5px;
+  }
+  
+  /* View 1 */
+  
+  .uploadSection {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    height: 150px;
+    z-index: 500;
+  }
+  
+  .m0a {
+    margin: 0 auto;
+  }
+  
+  .rounded {
+    border-radius: 2rem !important;
+  }
+  
+  .bg-success {
+    background-color: #79c48e !important;
+  }
+  
+  #subscribeInput::-webkit-input-placeholder {
+    color: #79c48e;
+  }
+  
+  /* --------------- */
+  
+  .flat-image {
+    height: 65% !important;
+  }

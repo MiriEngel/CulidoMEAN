@@ -42,20 +42,6 @@ exports.create = function (req, res) {
     });
 };
 
-exports.listPopOrder = function (req, res) {
-    // Use the model 'find' method to get a list of articles
-    Article.find(req.query).sort('-created').populate('orders').exec((err, articles) => {
-        if (err) {
-            // If an error occurs send the error message
-            return res.status(400).send({
-                message: getErrorMessage(err)
-            });
-        } else {
-            // Send a JSON representation of the article 
-            res.json(articles);
-        }
-    });
-};
 
 // Create a new controller method that retrieves a list of articles
 exports.list = function (req, res) {
@@ -124,23 +110,6 @@ function searchByDate(req, res) {
 
         }
     });
-
-
-            // {
-            //     "orders":
-            //     {
-            //         "$not":
-            //         {
-            //             "$elemMatch":
-            //             {
-            //                 "$or":
-            //                 [{ "Order.startDate": { $gte: startDate }, "Order.endDate": { $lt: endDate } },
-            //                 { "Order.startDate": { $lte: startDate }, "Order.endDate": { $gte: startDate } },
-            //                 { "Order.startDate": { $lte: endDate }, "Order.endDate": { $gte: endDate } }]
-            //             }
-            //         }
-            //     }
-            // }
 }
 
 
@@ -156,15 +125,8 @@ exports.update = function (req, res) {
     // Get the article from the 'request' object
     var article = req.article;
 
-    // Article.orderDates.push(req.body.orderDates);
-    // Article.save(done);
-
     article = _.extend(article, req.body);
-    // Update the article fields
-    // article.title = req.body.title;
-    // article.content = req.body.content;
-
-    // Try saving the updated article
+ 
     article.save((err) => {
         if (err) {
             // If an error occurs send the error message
@@ -178,72 +140,11 @@ exports.update = function (req, res) {
     });
 };
 
-exports.insertOrderDates = function (req, res) {
-    let queryField = {
-        $push: {
-            'orderDates': {
-                "startDate": req.body.orderDates.startDate,
-                "endDate": req.body.orderDates.endDate,
-                "status": 'new',
-                "userId": req.user.id //user who ask to rent
-            }
-        }
-    };
-
-    //update the user who own the asset
-    Article.update({ "_id": req.body._id }, queryField, function (err, article) {
-        if (err) {
-            return res.status(400).send({
-                message: getErrorMessage(err)
-            });
-        }
-        else {
-            res.json(article);
-        }
-    });
-};
 
 
 
-exports.updateOrderStatus = function (req, res) {
-    //update the user who own the asset
-    Article.update({ "_id": req.query.articleId, "orderDates._id": req.query.orderId }, {
-        '$set': {
-            'orderDates.$.status': req.query.status
-        }
-    }, function (err, article) {
-        if (err) {
-            return res.status(400).send({
-                message: getErrorMessage(err)
-            });
-        }
-        else {
-            res.json(article);
-        }
-    });
-
-}
-// exports.updateOrderDates = function(req,res){
-// let queryField = { $push: {
-//                         'orderDates': {
-//                             "startDate": req.body.orderDates.startDate,
-//                             "endDate":  req.body.orderDates.endDate,
-//                         }
-//                     }
-//                 };
 
 
-// Article.update({"_id": req.body._id},queryField, function (err, article) {
-//         if (err) {
-//             return res.status(400).send({
-//                 message: getErrorMessage(err)
-//             });
-//         }
-//         else {
-//             res.json(article);
-//         }
-//     });
-// };
 
 // Create a new controller method that delete an existing article
 exports.delete = function (req, res) {

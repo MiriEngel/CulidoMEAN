@@ -15,8 +15,6 @@ module.exports = function (app) {
         .delete(users.requiresLogin, articles.hasAuthorization, articles.delete);
 
     app.route('/api/articles/uploadPics').post(articles.uploadArticlePicture);
-    app.route('/api/articles/insertOrderDates').post(articles.insertOrderDates);
-
 
 
     app.param('articleId', articles.articleByID);

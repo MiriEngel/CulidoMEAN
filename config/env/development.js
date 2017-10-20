@@ -13,17 +13,17 @@ module.exports = {
 		callbackURL: 'http://localhost:3000/oauth/twitter/callback'
 	},
 	google: {
-		clientID: '323650394818-tquuipkp99sq6to82q9kk1i2agp1bgc4.apps.googleusercontent.com',
-		clientSecret: 'Sfmoje6IISz-vEE-Xe84DHjz',
+		clientID: '686126099925-1km38v1mee3u6ou620jib0j1gvh5q2q3.apps.googleusercontent.com',
+		clientSecret: 'CuYqEx554SogolhJQJSXZj15',
 		callbackURL: 'http://localhost:3000/oauth/google/callback'
 	},
 	  mailer: {
-    from: process.env.MAILER_FROM || 'sieek.globalservice@gmail.com',
+    from: process.env.MAILER_FROM || '',
     options: {
-      service: process.env.MAILER_SERVICE_PROVIDER || 'gmail',
+      service: process.env.MAILER_SERVICE_PROVIDER || '',
       auth: {
-        user: process.env.MAILER_EMAIL_ID || 'sieek.globalservice@gmail.com',
-        pass: process.env.MAILER_PASSWORD || '203882071'
+        user: process.env.MAILER_EMAIL_ID || '',
+        pass: process.env.MAILER_PASSWORD || ''
       },
 	 secure: true,
 	     host: 'smtp.gmail.com',

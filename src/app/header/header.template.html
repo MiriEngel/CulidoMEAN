@@ -1,11 +1,50 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-  this is header!
-  </h1>
+<nav class="container-fluid navbar navbar-expand-md fixed-top headerStyle transDarkBg">
+  <div class="d-flex justify-content-lg-around">
+    <a class="" href="#">
+      <img src="../../assets/images/logo.png" alt="" class="img-fluid">
+    </a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav linkBar text-white">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">HOME </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">ABOUT</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">WHITEPAPER</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">FAQ</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link"[routerLink]="['/articles/create']">UPLOAD </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"  [routerLink]="['/articles']">LIST </a>
+          </li>
+        </ul>
+
+      <div class="searchInputContainer text-white d-flex inner-addon">
+        <span class="align-self-center"  *ngIf="!user"> <a [routerLink]="['/authentication/signin']">login</a> </span>
+        <div *ngIf="user">hello: {{user.firstName}}</div>
+        <input type="text" placeholder="search" class="searchInput rounded form-control text-white">
+      </div>
+
+    </div>
   </div>
+</nav>
 
 
+
+<!--The content below is only a placeholder and can be replaced.-->
+<!-- <div style="text-align:center">
 
 
                         <a [routerLink]="['/articles']">ALL ASSETS</a>
@@ -15,4 +54,4 @@
                     <li *ngIf="!user"><a [routerLink]="['/authentication/signin']">Signin</a></li>
                     <div *ngIf="user">
 hello: {{user.firstName}}
-                      </div>
+                      </div> -->
