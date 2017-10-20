@@ -33,7 +33,8 @@
 
       <div class="searchInputContainer text-white d-flex inner-addon">
         <span class="align-self-center"  *ngIf="!user"> <a [routerLink]="['/authentication/signin']">login</a> </span>
-        <div *ngIf="user">hello: {{user.firstName}}</div>
+        <span class="align-self-center"  *ngIf="user">hello: {{user.firstName}}</span>
+        <div *ngIf="user"><a href="/api/auth/signout"> Signout</a> </div>
         <input type="text" placeholder="search" class="searchInput rounded form-control text-white">
       </div>
 
