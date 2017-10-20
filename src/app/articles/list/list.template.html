@@ -1,9 +1,116 @@
-list article!!!!!!!!!!!!!!!!
-!!!!!!!!!!!!!!!!!!!!1
-!!!!!!!!!!!!11
 
-<br>
 
+<!-- 
     <div *ngFor="let article of articles">
      article title: {{ article.title }} 
-    </div>
+    </div> -->
+
+
+
+      <!-- Recent videos -->
+      <section class="jumbotron jumbotron-fluid mb-0">
+        <div class="container font-weight-bold">
+            <h2 class="text-center"> 
+                RECENT VIDEOS 
+            </h2>
+            <div class="album mt-5">
+
+                     <!-- grid -->
+        <div *ngIf="articles && articles.length > 0">
+                <div *ngFor="let article of articles" class="tile tileDynamic" >
+                    <div class="tileContent" [routerLink]="['/articles', article._id]" style=" height: 60vh;">
+                        <div class="property shadow-hover" style="position: relative;">
+                       
+      
+                                <div>
+                                        <span>  {{ article.title }} </span>
+                                        <img src="../../assets/images/albumimage.png" alt="" class="image-fluid flat-image">
+                                        <div class="pt-1 d-flex justify-content-between">
+                                          <div>
+                                              <span class="d-inline-block text-success">  <i class="fa fa-star"> </i>  <i class="fa fa-star"> </i>
+                                                                                          <i class="fa fa-star"> </i>  <i class="fa fa-star"> </i> <i class="fa fa-star"> </i>
+                                              </span>
+                                          </div>
+                                          <div>
+                                            <span class="d-inline-block text-dark px-1"> <i class="fa fa-thumbs-o-up"> 569 </i> </span>
+                                            <span class="d-inline-block text-dark px-1"> <i class="fa fa-comment-o"> 350 </i>  </span>
+                                            <span class="d-inline-block text-dark px-1"> <i class="fa fa-share-square-o"> </i> </span>
+                                          </div>
+                                        </div>
+                                    </div>
+                            
+               
+                        
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+  
+            </div>
+        </div>
+    </section>
+
+    <style>
+            .mydrp {
+                width: 100%!important;
+            }
+            
+                
+            .tile {
+                position: relative;
+                float: left;
+                height: auto;
+            }
+            
+            .tileContent {
+                margin: 0px 7px 7px 7px;
+                border-radius: 0px 0px 7px 7px;
+                position: relative;
+                height: auto;
+                overflow: hidden;
+            }
+            
+            .gridPane {
+                width: 100%;
+                
+            }
+            
+       
+            /* response to screen width */
+            
+            @media screen and (min-width: 1400px) {
+                .tileDynamic {
+                    width: 33%;
+                }
+            }
+            
+            @media screen and (max-width: 1400px) and (min-width: 800px) {
+                .tileDynamic {
+                    width: 50%;
+                }
+            }
+            
+            @media screen and (max-width: 800px) {
+                .tileDynamic {
+                    width: 100%;
+                }
+            }
+            /* responsive */
+            
+            @media screen and (max-width: 700px) {
+                .gridPane {
+                    width: 100%;
+                }
+         
+            }
+            /* regular acreen */
+            
+            @media screen and (min-width: 700px) {
+                .gridPane {
+                    width: 100%;
+                }
+              
+            }
+        </style>
